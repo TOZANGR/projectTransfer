@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Railroad Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([48, -120], 10);
+
+        // Add a tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Function to fetch and add railroad lines
+        function loadRailroads(bounds) {
+            var sw = bounds.getSouthWest();
+            var ne = bounds.getNorthEast();
+            var bbox = [sw.lat, sw.lng, ne.lat, ne.lng].join(',');
+            console.log(bbox)
+            var overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];way["usage"="main"]["railway"="rail"](${bbox});(._;>;);out;`;
+            $.ajax({
+                url: overpassUrl,
+                dataType: 'json',
+                success: function (data) {
+                    // Successfully received JSON data
+                    try {
+                        console.log("RAW:", data);
+                        //console.log(data.elements[1].lon);
+                        var geojson = []
+                        var yL = []
+                        var xL = []
+                        var dist = []
+                        
+                        function calc(x1, y1, x2, y2){
+                            const dx = x2 - x1;
+                            const dy = y2 - y1;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            return distance.toFixed(5);
+                            
+                        };
+                        /*
+                        var ne = map.getBounds()._northEast
+                        var sw = map.getBounds()._southWest
+                        var disty = [calc(ne.lat, ne.lng, sw.lat, sw.lng)]
+                        console.log(ne, sw)
+                        console.log("DISTY: ", disty, (disty / 10000).toFixed(5))
+                        */
+                        for (element in data.elements){
+                            //console.log(element);
+                            //console.log(data.elements[element].lat, data.elements[element].lng)
+                            if (data.elements[element].lat && data.elements[element].lon){
+                                var x = data.elements[element].lat
+                                var y = data.elements[element].lon
+                                if (element > 0){
+                                    var xTwo = data.elements[element - 1].lat
+                                    var yTwo = data.elements[element - 1].lon
+                                }
+                                
+                                var calced = (calc(x, y, xTwo, yTwo));
+                                if ((calced < 0.01)){
+                                    dist.push(calced)
+                                    //console.log(calced, x, y, xTwo, yTwo);
+                                    xL.push(x);
+                                    yL.push(y);
+                                    
+                                }
+                                else{
+                                    xL.push("bazinga")
+                                    yL.push("bazinga")
+                                }
+                                
+                                //else{
+                                    //console.log(calced);
+                                //}
+                            }
+                        }       
+                        
+                        //console.log(xL, yL);
+                        var bazinga = []
+                        for (element in xL){
+                            if (((xL[element] == "bazinga") || (yL[element] == "bazinga"))){
+                                geojson.push(bazinga);
+                                bazinga = []
+                            }
+                            else{
+                                bazinga.push([xL[element], yL[element]])
+
+                            }
+                        }
+                        console.log("json", geojson, geojson.length)
+                        for (i in geojson){
+                            L.polyline(geojson[i], {
+                                style:  {
+                                    color: 'red',
+                                    weight: 10,
+                                    opacity: 0.5,
+                                    smoothFactor: 1
+                                }
+                            }).addTo(map);
+                        }
+                    }
+                    catch(err) {
+                        console.log(err);
+                    }
+                    console.log("POST GEO", geojson);
+
+                            
+                }
+            })
+        }
+                
+        // Initial load
+        loadRailroads(map.getBounds());
+
+        // Load data on map move
+        map.on('moveend', function () {
+            loadRailroads(map.getBounds());
+        });
+    </script>
+</body>
+
+</html>

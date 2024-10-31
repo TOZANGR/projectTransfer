@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Logger</title>
+    <style>
+        .button {
+                font: bold 14px Arial;
+                color:aliceblue;
+                    background: radial-gradient(
+                    circle at top,
+                    white,
+                    yellow,
+                    orange,
+                    red,
+                    darkred,
+                    maroon,
+                    indigo,
+                    black
+                );
+                border-radius: 50%;
+                margin: 50% 50%;
+                height: 160px;
+                width: 160px;
+                border-right: 5px solid black;
+                border-left: 5px solid black;
+                border-bottom: 5px solid black;
+                box-shadow: 
+                    -5px 10px 20px black, 
+                    5px 10px 20px black, 
+                    -5px 20px 30px blue, 
+                    5px 20px 30px blue;
+                }
+                body { 
+                    background: black; 
+                }
+    </style>
+</head>
+<body>
+    <button class="button" id="logButton">Press for attention</button>
+    <script>
+        document.getElementById('logButton').addEventListener('click', async () =>
+    {
+        try{
+            const r = fetch('./api/jlog.js', {
+                method:'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            ).then(response => console.log(response))
+        } catch(err){
+            console.log('me when')
+        }
+    });
+    </script>
+</body>
+</html>
