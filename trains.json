@@ -1,0 +1,243 @@
+{
+    "Trains":
+    [
+        {
+            "name": "UP",
+            "type": "intermodal",
+            "location": "OMSI",
+            "ncoordinates": "45°30'11.7",
+            "wcoordinates": "122°39'12.9",
+            "time": "13:00",
+            "heading": "northbound",
+            "date": "2/25/24",
+            "dow": "N/A"
+        },
+        {
+            "name":"UP",
+            "type":"intermodal",
+            "location": "28th/I-84",
+            "ncoordinates": "45°31'50.7",
+            "wcoordinates": "122°38'13.9",
+            "time": "17:45",
+            "heading": "eastbound",
+            "date": "3/2/24",
+            "dow": "saturday"
+
+        },
+        {
+            "name":"UP",
+            "type": "intermodal",
+            "location": "60th/I-84",
+            "ncoordinates": "45°31'45.0",
+            "wcoordinates": "122°36'08.2",
+            "time": "18:00",
+            "date": "3/22/24",
+            "dow": "friday",
+            "heading":"eastbound"
+
+
+        },
+        {
+            "name":"UP",
+            "type":"intermodal",
+            "location": "Evergreen/SE 115th Ct Van. WA.",
+            "ncoordinates": "45°36'02.0",
+            "wcoordinates": "122°33'15.2",
+            "time": "12:30",
+            "date": "3/24/24",
+            "dow": "sunday",
+            "heading": "eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "hopper",
+            "location": "Kalama, WA",
+            "ncoordinates": "46°00'22.2",
+            "wcoordinates": "122°50'44.4",
+            "time": "13:00",
+            "date": "3/24/24",
+            "dow": "sunday",
+            "heading": "northbound"
+
+        },
+        {
+            "name":"UP",
+            "type":"intermodal",
+            "location": "7th/I-84",
+            "ncoordinates": "45°31'36.5",
+            "wcoordinates": "122°39'32.0",
+            "time": "22:30",
+            "date": "3/28/24",
+            "dow": "thursday",
+            "heading":"eastbound"
+        },
+        {
+            "name": "UP",
+            "type":"intermodal",
+            "location": "82nd/I-84",
+            "ncoordinates": "45°32'09.5",
+            "wcoordinates": "122°35'12.7",
+            "time": "01:00",
+            "date":"3/31/24",
+            "dow":"sunday",
+            "heading":"eastbound"
+        },
+        {
+            "name": "UP",
+            "type": "intermodal",
+            "location":"Evergreen/SE 115th Ct Van. WA.",
+            "ncoordinates": "45°36'02.0",
+            "wcoordinates": "122°33'15.2",
+            "time": "09:45",
+            "date": "4/4/24",
+            "dow": "thursday",
+            "heading": "westbound"
+
+        },
+        {
+            "name":"UP",
+            "type": "well",
+            "location": "82nd/I-84",
+            "ncoordinates": "45°32'09.5",
+            "wcoordinates": "122°35'12.7",
+            "time": "01:20",
+            "date": "6/14/24",
+            "dow": "friday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "intermodal",
+            "location":"82nd/I-84",
+            "ncoordinates": "45°32'09.5",
+            "wcoordinates": "122°35'12.7",
+            "time": "13:00",
+            "date":"6/21/24",
+            "dow":"friday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "coal loaded",
+            "location": "SE Gibson Rd, WA",
+            "ncoordinates": "45°34'02.3",
+            "wcoordinates": "122°17'22.3",
+            "time": "10:00",
+            "date": "7/4/24",
+            "dow":"thursday",
+            "heading": "westbound"
+        },
+        {
+            "name":"UP",
+            "type":"intermodal",
+            "location": "Eastwind Ice Cream",
+            "ncoordinates": "45°40'04.2",
+            "wcoordinates": "121°53'41.5",
+            "time": "12:10",
+            "date": "7/4/24",
+            "dow": "thursday",
+            "heading": "eastbound"
+        },
+        {
+            "name": "UP",
+            "type":"intermodal",
+            "location":"16 MI West of the Dalles/I-84",
+            "ncoordinates": "45°41'35.1",
+            "wcoordinates": "121°22'54.7",
+            "date": "7/5/24",
+            "time": "07:20",
+            "dow":"friday",
+            "heading": "westbound"
+
+        },
+        {
+            "name":"UP",
+            "type":"hopper",
+            "location":"I-84 57 MI East of I-205",
+            "ncoordinates":"45°41'26.2",
+            "wcoordinates":"121°43'04.4",
+            "date":"7/14/24",
+            "dow":"sunday",
+            "time":"17:30",
+            "heading":"eastbound"
+
+        },
+        {
+            "name":"UP",
+            "type": "well",
+            "location":"82nd/I-84",
+            "ncoordinates": "45°32'09.5",
+            "wcoordinates": "122°35'12.7",
+            "time": "12:50",
+            "date":"7/15/24",
+            "dow":"monday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "well",
+            "location":"181nd/I-84",
+            "ncoordinates": "45°32'34.5",
+            "wcoordinates": "122°28'37.5",
+            "time": "15:20",
+            "date":"7/15/24",
+            "dow":"monday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "well",
+            "location":"Sandy River/I-84",
+            "ncoordinates": "45°32'34.5",
+            "wcoordinates": "122°23'03.4",
+            "time": "14:40",
+            "date":"7/20/24",
+            "dow":"saturday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "intermodal",
+            "location":"60th/I-84",
+            "ncoordinates": "45°31'44.8",
+            "wcoordinates": "122°36'08.7",
+            "time": "07:45",
+            "date":"7/24/24",
+            "dow":"wednesday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type":"hopper",
+            "location":"Morrison Bridge/I-5",
+            "ncoordinates": "45°31'06.1",
+            "wcoordinates": "122°39'53.4",
+            "time":"14:15",
+            "date":"7/24/24",
+            "dow":"wednesday",
+            "heading":"southbound"
+        },
+        {
+            "name":"UP",
+            "type": "intermodal",
+            "location":"82nd/I-84",
+            "ncoordinates": "45°32'09.5",
+            "wcoordinates": "122°35'12.7",
+            "time": "18:00",
+            "date":"7/24/24",
+            "dow":"wednesday",
+            "heading":"eastbound"
+        },
+        {
+            "name":"UP",
+            "type": "well",
+            "location":"Rail Heritige Museum",
+            "ncoordinates": "45°30'29.8",
+            "wcoordinates": "122°39'45.1",
+            "time": "15:00",
+            "date":"7/25/24",
+            "dow":"thursday",
+            "heading":"northbound"
+        }
+    ]
+}
